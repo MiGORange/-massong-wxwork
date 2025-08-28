@@ -299,9 +299,15 @@ class WxWork {
         try {
             const accessToken = await this.getAccessToken();
             
-            this._log('info', '发送消息', { content });
+            // 确保消息包含agentid
+            const messageData = {
+                ...content,
+                agentid: this.agentid
+            };
+            
+            this._log('info', '发送消息', { content: messageData });
             const url = `${this.baseURL}/message/send?access_token=${accessToken}`;
-            const response = await this._request('POST', url, content);
+            const response = await this._request('POST', url, messageData);
 
             const data = response.data;
             if (data.errcode && data.errcode !== 0) {

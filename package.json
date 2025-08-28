@@ -1,6 +1,6 @@
 {
   "name": "@massong/wxwork",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "企业微信API封装库，支持获取token、发送消息、获取用户信息、部门信息等核心功能",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
